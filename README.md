@@ -29,6 +29,7 @@ To-Do:
 
 Example creation of web driver using factory pattern.
 > FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
+
 > WebDriver webDriver = new FactoryPatternObject.getWebDriver("chrome");
 
 The above code creates a Chrome Web Driver.
