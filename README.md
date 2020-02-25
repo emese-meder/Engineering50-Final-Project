@@ -13,7 +13,7 @@ Sparta Global Academy Final Week Project
 
 To-Do: 
 
-* restrospective on what we did so far (good and bad)
+* retrospective on what we did so far (good and bad)
 
 * Framework review
 
