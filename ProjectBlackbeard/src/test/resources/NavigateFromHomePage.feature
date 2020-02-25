@@ -1,6 +1,6 @@
-Feature: Go to Women page from HomePage
+Feature: Going to Women page from the HomePage
 
-  Scenario: Click on women button
+  Scenario: Clicking on the WOMEN button
     Given I am on the homepage
-    When I click on women
-    Then I will be on the women page
+    When I click on the WOMEN button on the navigation bar
+    Then I will be on the Women page
