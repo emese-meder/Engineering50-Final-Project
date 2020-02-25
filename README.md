@@ -41,13 +41,13 @@ To-Do:
 ### Format Example
 Feature: Going to the WOMEN page from the HomePage
 
- Scenario: Clicking on the Women Button
+&nbsp Scenario: Clicking on the Women Button
  
-  Given I am on the homepage
+&nbsp, &nbsp Given I am on the homepage
   
-  When I click on the WOMEN button on the navigation bar
+&nbsp, &nbsp When I click on the WOMEN button on the navigation bar
   
-  Then I will be on the Women page
+&nbsp, &nbsp Then I will be on the Women page
 
 ## Abstract Class
 ### Guide to using the *AbstractPage*
