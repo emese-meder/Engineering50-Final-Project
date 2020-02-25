@@ -24,6 +24,39 @@ To-Do:
 
 # Read Me
 
+## File Structure
+
+* All pages must be within *src/test/java/com.sparta.eng50.pages*
+* Stepdefs and TestRunner must be within *src/test/java*
+* .feature files should be within *src/test/resources*
+* All drivers are within *Project file*
+
+## Feature Format
+
+* Features must be descriptive
+* Given/When/Then statements must be written in **first person**
+* Write the page/button names referred to **exactly** as they are on the website
+* **Do not** comment Gherkin code (in .feature files)
+
+### Format Example
+Feature: Going to the WOMEN page from the HomePage
+ Scenario: Clicking on the Women Button
+  Given I am on the homepage
+  When I click on the WOMEN button on the navigation bar
+  Then I will be on the Women page
+
+## Abstract Class
+### Guide to using the *AbstractPage*
+* All newly created page models should extend AbstractPage and provide it with the webdriver in the constructor
+  * Use other classes for constructor examples
+* WebDriver in AbstractPage is protected, so only one webdriver can be used per test
+
+## Classes
+### Guide to creating a class
+* Method names should be descriptive verbs
+* Navigate-to methods should return a PageObjectModel
+
+
 ## Factory Pattern
 ### Guide to using *Web Driver* Factory Pattern
 
