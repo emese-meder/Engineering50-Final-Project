@@ -40,6 +40,11 @@ Feature: Going to the WOMEN page from the HomePage
 * Method names should be descriptive verbs
 * Navigate-to methods should return a PageObjectModel
 
+## Testing
+### Test Log-in Details
+Details to use for logging in during tests
+* Email = fedf@fd.com
+* Password = Password1
 
 ## Factory Pattern
 ### Guide to using *Web Driver* Factory Pattern
