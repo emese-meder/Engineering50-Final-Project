@@ -27,16 +27,20 @@ To-Do:
 Overview: The purpose of this sprint was to make a start on creating tests that satisfy the user stories created in the planning process. We split off into sub-groups and assigned tickets to each group, three of the four groups had 2 tickets to complete by the sprints end, and one of the group was dealing with the *EPIC* associated with the quickest path.
 
 Review:
-Positives- Toward the end of the sprint once we figured out the framework, we were gaining momentum with completing tickets.
+Positives- 
 
-           As a group we understood the Sprints more, as Jira requires more structured sprints. This meant that we couldn't end a sprint            and start a new one.
-           
-           Our sprint planning was really strong, this set us up for an easier time during the time.
-           
-Improvements- Throughout the first sprint we had a breakdown in communication once the sub-groups had gone off and started their                       tickets. We need to improve this so that anyone at any point when asked can say what they are doing and what everyone is                 doing.     
+Toward the end of the sprint once we figured out the framework, we were gaining momentum with completing tickets.
 
-              We were running into the issue where we sometimes didn't understand the task/ticket that we were undertaking. This slowed               down our process quite considerably.
+As a group we understood the Sprints more, as Jira requires more structured sprints. This meant that we couldn't end a sprint            and start a new one.
+
+Our sprint planning was really strong, this set us up for an easier time during the time.
+           
+Improvements- 
+
+Throughout the first sprint we had a breakdown in communication once the sub-groups had gone off and started their                       tickets. We need to improve this so that anyone at any point when asked can say what they are doing and what everyone is                 doing.     
+
+We were running into the issue where we sometimes didn't understand the task/ticket that we were undertaking. This slowed               down our process quite considerably.
               
-              Not having concise user stories so they were getting misconstrued between groups and would need further clarification
-              from the author of the user story.
+Not having concise user stories so they were getting misconstrued between groups and would need further clarification
+from the author of the user story.
 
