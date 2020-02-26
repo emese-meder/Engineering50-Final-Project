@@ -9,20 +9,21 @@ import org.openqa.selenium.WebDriver;
 
 public class DriverStepdef {
     FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
-
-    HomePage homePage;
+    WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
+    HomePage homePage = new HomePage(webDriver);
     WomenPage womenPage;
-    WebDriver webDriver;
 
     @Given("I am using a {string}")
     public void iAmUsingABrowser(String driver) {
-
-        webDriver = factoryPatternObject.getWebDriver(driver);
-        homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
     }
 
-    @When("I click on the WOMEN button on nav bar")
+    @Given("I am on the homepage")
+    public void iAmOnTheHomepage() {
+        homePage.navigateToHomePage();
+    }
+
+    @When("I click on the WOMEN button on the navigation bar")
     public void iClickOnTheWOMENButtonOnNavBar() {
         womenPage = homePage.navigateToWomenPage(); // Initialise the required pages to use their methods
     }
@@ -30,10 +31,6 @@ public class DriverStepdef {
     @Then("I will be on the Women page")
     public void iWillBeOnTheWomenPageWithBrowser() {
         Assertions.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category", webDriver.getCurrentUrl());
-        homePage.quit();
+        webDriver.quit();
     }
-
-
-
-
 }

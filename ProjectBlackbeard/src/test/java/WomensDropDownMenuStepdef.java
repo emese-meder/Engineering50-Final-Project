@@ -11,7 +11,7 @@ public class WomensDropDownMenuStepdef {
     WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
     HomePage homePage = new HomePage(webDriver);
 
-    @Given("I am on the homepage")
+    @Given("I am on home page")
     public void iAmOnTheHomepage() {
         homePage.navigateToHomePage();
     }
@@ -25,5 +25,6 @@ public class WomensDropDownMenuStepdef {
     public void iShouldBeAbleToClickOnALinkToVisitTheTShirtPage() throws InterruptedException {
         homePage.navigateToTShirtsPage();
         Assertions.assertEquals("http://automationpractice.com/index.php?id_category=5&controller=category", webDriver.getCurrentUrl());
+        webDriver.quit();
     }
 }

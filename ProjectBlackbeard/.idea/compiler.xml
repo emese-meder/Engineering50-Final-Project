@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Engineering50-Final-Project" />
         <module name="ProjectBlackbeard" />
+        <module name="Engineering50-Final-Project" />
       </profile>
     </annotationProcessing>
   </component>
