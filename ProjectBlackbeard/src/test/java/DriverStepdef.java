@@ -13,12 +13,13 @@ public class DriverStepdef {
     HomePage homePage = new HomePage(webDriver);
     WomenPage womenPage;
 
-
-
     @Given("I am using a {string}")
     public void iAmUsingABrowser(String driver) {
+        homePage.navigateToHomePage();
+    }
 
-
+    @Given("I am on the homepage")
+    public void iAmOnTheHomepage() {
         homePage.navigateToHomePage();
     }
 
@@ -32,8 +33,4 @@ public class DriverStepdef {
         Assertions.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category", webDriver.getCurrentUrl());
         webDriver.quit();
     }
-
-
-
-
 }

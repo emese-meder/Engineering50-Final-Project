@@ -44,7 +44,7 @@ public class UserAddressStepdefs {
     public void iWillBeAbleToUpdateMyAddress() {
         editAddressPage.enterNewAddress();
         editAddressPage.saveNewAddress();
-
         assertEquals("125 London Wall", addressPage.getDeliveryAddress1Text());
+        webDriver.quit();
     }
 }

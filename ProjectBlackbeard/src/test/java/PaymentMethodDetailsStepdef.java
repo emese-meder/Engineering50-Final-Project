@@ -36,6 +36,7 @@ public class PaymentMethodDetailsStepdef {
 
     @Then("I will go to the Detail page about {string}")
     public void iWillGoToTheDetailPageAboutPaymentType(String paymentType) {
-        /*Assertions.assertEquals("http://automationpractice.com/index.php?fc=module&module="+ paymentType +"&controller=payment", webDriver.getCurrentUrl());*/
+        Assertions.assertEquals("http://automationpractice.com/index.php?fc=module&module="+ paymentType +"&controller=payment", webDriver.getCurrentUrl());
+        webDriver.quit();
     }
 }
