@@ -15,5 +15,4 @@ public class CartPage extends AbstractPage {
         webDriver.findElement(checkoutButton).click();
         return (new SignInPageInCart(webDriver));
     }
-
 }
