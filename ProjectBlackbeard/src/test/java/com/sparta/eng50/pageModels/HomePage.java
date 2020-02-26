@@ -14,10 +14,12 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
+
     public SignInPage navigateToSignInPage() {
         navigateToHomePage();
         webDriver.findElement(signInButton).click();
         return new SignInPage(webDriver);
     }
+
 
 }
