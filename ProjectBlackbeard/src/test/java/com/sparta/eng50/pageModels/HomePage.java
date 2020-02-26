@@ -48,10 +48,10 @@ public class HomePage extends AbstractPage {
     }
 
 
-    public CartPage addItemToCart() {
-        webDriver.findElement(addToCartButton).click();
-        return new CartPage(webDriver);
-    }
+//    public CartPage addItemToCart() {
+//        webDriver.findElement(addToCartButton).click();
+//        return new CartPage(webDriver);
+//    }
 
     public String getCartNotification(){
         try {
