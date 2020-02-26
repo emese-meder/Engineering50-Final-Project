@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends AbstractPage {
 
-
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -14,4 +13,13 @@ public class HomePage extends AbstractPage {
         webDriver.get("http://automationpractice.com/index.php");
         return this;
     }
+
+
+    public SignInPage navigateToSignInPage() {
+        navigateToHomePage();
+        webDriver.findElement(signInButton).click();
+        return new SignInPage(webDriver);
+    }
+
+
 }
