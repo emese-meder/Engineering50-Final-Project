@@ -29,4 +29,8 @@ public class MyStepdefs {
         Assertions.assertEquals("http://automationpractice.com/index.php?id_category=3&controller=category", webDriver.getCurrentUrl());
         webDriver.quit();
     }
+
+
+
+
 }
