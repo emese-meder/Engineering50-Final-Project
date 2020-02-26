@@ -34,22 +34,24 @@ public class QuantityOfItemsStepdef {
     @When("I click on the add quantity button")
     public void iClickOnTheAddQuantityButton() throws InterruptedException {
         shoppingCartSummaryPage.increaseQuantity();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
     }
 
     @Then("the product quantity will increase")
     public void theProductQuantityWillIncrease() throws InterruptedException {
         Assertions.assertEquals("2 Products", webDriver.findElement(amount).getText());
+        webDriver.quit();
     }
 
     @When("I click on the decrease quantity button")
     public void iClickOnTheDecreaseQuantityButton() throws InterruptedException {
         shoppingCartSummaryPage.decreaseQuality();
-        Thread.sleep(3000);
+        Thread.sleep(10000);
     }
 
     @Then("the product quantity will decrease")
     public void theProductQuantityWillDecrease() {
         Assertions.assertEquals("Your shopping cart is empty.", webDriver.findElement(emptyBox).getText());
+        webDriver.quit();
     }
 }
