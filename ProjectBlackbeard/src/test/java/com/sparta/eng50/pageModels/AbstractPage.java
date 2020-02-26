@@ -15,6 +15,7 @@ public abstract class AbstractPage {
     By signInButton = By.linkText("Sign in");
     By signOutButton = By.className("logout");
     By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
+    By specialPageButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[1]/a");
 
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -23,6 +24,11 @@ public abstract class AbstractPage {
     public CartPage navigateToCart() {
         webDriver.findElement(cartButton).click();
         return (new CartPage(webDriver));
+    }
+
+    public SpecialPage navigateToSpecial() {
+        webDriver.findElement(specialPageButton).click();
+        return (new SpecialPage(webDriver));
     }
 
     public SearchResultsPage enterQueryAndSearch(String input) {
