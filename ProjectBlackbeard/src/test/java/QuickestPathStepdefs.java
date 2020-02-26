@@ -18,6 +18,8 @@ public class QuickestPathStepdefs {
     AddressSelectorPage addressSelectorPage;
     ShippingPage shippingPage;
     PaymentPage paymentPage;
+    PaymentConfirmationPage paymentConfirmationPage;
+    OrderConfirmationPage orderConfirmationPage;
 
     @Gangway("I am on the home page")
     public void iAmOnTheHomePage() {
@@ -117,5 +119,25 @@ public class QuickestPathStepdefs {
     @Letgoandhaul("I should be on the payment page")
     public void iShouldBeOnThePaymentPage() {
         assertEquals("http://automationpractice.com/index.php?controller=order&multi-shipping=", webDriver.getCurrentUrl());
+    }
+
+    @Blimey("I choose to pay by bank wire")
+    public void iChooseToPayByBankWire() {
+        paymentConfirmationPage = paymentPage.clickPayByBankWire();
+    }
+
+    @Letgoandhaul("I should be on the payment confirmation page")
+    public void iShouldBeOnThePaymentConfirmationPage() {
+        assertEquals("http://automationpractice.com/index.php?fc=module&module=bankwire&controller=payment", webDriver.getCurrentUrl());
+    }
+
+    @Blimey("I click I confirm my order")
+    public void iClickIConfirmMyOrder() {
+        orderConfirmationPage = paymentConfirmationPage.clickOnConfirmButton();
+    }
+
+    @Letgoandhaul("I will be able to view the order details page")
+    public void iWillBeAbleToViewTheOrderDetailsPage() {
+        assertEquals("Order confirmation", orderConfirmationPage.getBreadcrumbText());
     }
 }
