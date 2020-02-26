@@ -13,6 +13,7 @@ public abstract class AbstractPage {
     By navTShirtsButton = By.linkText("T-shirts");
     By contactUsButton = By.xpath("//*[@id=\"contact-link\"]/a");
     By signInButton = By.linkText("Sign in");
+    By signOutButton = By.className("logout");
     By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
 
     public AbstractPage(WebDriver webDriver) {
@@ -52,6 +53,11 @@ public abstract class AbstractPage {
     public SignInPage navigateToHeaderSignInPage() {
         webDriver.findElement(signInButton).click();
         return (new SignInPage(webDriver));
+    }
+
+    public AbstractPage signOut() {
+        webDriver.findElement(signOutButton).click();
+        return this;
     }
 
     public void quit() {
