@@ -33,10 +33,11 @@ public class SignInPage extends AbstractPage {
         return this;
     }
 
-    public void login() {
+    public MyAccountPage login() {
         webDriver.findElement(emailAddressInputBox).sendKeys("fedf@fd.com");
         webDriver.findElement(passwordInputBox).sendKeys("Password1");
         webDriver.findElement(signInButton).click();
+        return (new MyAccountPage(webDriver));
     }
 
   public AccountCreationPage enterEmailAddress(String email) {
@@ -59,14 +60,14 @@ public class SignInPage extends AbstractPage {
         return webDriver.findElement(authenticationBreadcrumb).getText();
     }
 
-    public SignInPage enterSignInFields() throws InterruptedException {
+    public MyAccountPage enterSignInFields() throws InterruptedException {
         Thread.sleep(1000);
 
 
         webDriver.findElement(Username).sendKeys("fedf@fd.com");
         webDriver.findElement(Password).sendKeys("Password1");
         webDriver.findElement(SignInEnterButton).click();
-        return (new SignInPage(webDriver));
+        return (new MyAccountPage(webDriver));
 
     }
 }

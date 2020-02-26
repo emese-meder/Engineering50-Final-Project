@@ -25,7 +25,6 @@ public class HomePage extends AbstractPage {
 
 
     public HomePage navigateToHomePage() {
-
         webDriver.get("http://automationpractice.com/index.php");
         return this;
     }
@@ -38,13 +37,6 @@ public class HomePage extends AbstractPage {
     public void proceedToCheckout() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
         webDriver.findElement(proceedToCheckoutButton).click();
-    }
-
-
-    public SignInPage navigateToSignInPage() {
-        navigateToHomePage();
-        webDriver.findElement(signInButton).click();
-        return new SignInPage(webDriver);
     }
 
 
