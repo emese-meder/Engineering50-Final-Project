@@ -11,7 +11,6 @@ public class HomePage extends AbstractPage {
 
     By addToCartButton = By.xpath("//*[@id=\"homefeatured\"]/li[6]/div/div[2]/div[2]/a[1]");
     By proceedToCheckoutButton = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a");
-    WebDriverWait wait = new WebDriverWait(webDriver, 120);
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By tshirtButtonInDropdown = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[1]/a");
@@ -20,9 +19,7 @@ public class HomePage extends AbstractPage {
         super(webDriver);
     }
 
-
     public HomePage navigateToHomePage() {
-
         webDriver.get("http://automationpractice.com/index.php");
         return this;
     }
@@ -32,11 +29,11 @@ public class HomePage extends AbstractPage {
         webDriver.findElement(addToCartButton).click();
     }
 
-    public void proceedToCheckout() {
+    public ShoppingCartSummaryPage proceedToCheckout() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
         webDriver.findElement(proceedToCheckoutButton).click();
+        return (new ShoppingCartSummaryPage(webDriver));
     }
-
 
     public SignInPage navigateToSignInPage() {
         navigateToHomePage();

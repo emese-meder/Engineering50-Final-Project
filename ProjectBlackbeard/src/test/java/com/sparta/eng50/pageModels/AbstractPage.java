@@ -3,10 +3,12 @@ package com.sparta.eng50.pageModels;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
     protected WebDriver webDriver;
 
+    protected WebDriverWait wait;
     By queryBox = By.name("search_query");
     By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By navDressesButton = By.linkText("Dresses");
@@ -15,9 +17,16 @@ public abstract class AbstractPage {
     By signInButton = By.linkText("Sign in");
     By signOutButton = By.className("logout");
     By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
+    By homePageLogoButton = By.xpath("//*[@id=\"header_logo\"]/a/img");
 
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
+        this.wait = new WebDriverWait(webDriver, 20);
+    }
+
+    public HomePage navigateToHomePageThroughLogo() {
+        webDriver.findElement(homePageLogoButton).click();
+        return (new HomePage(webDriver));
     }
 
     public CartPage navigateToCart() {
