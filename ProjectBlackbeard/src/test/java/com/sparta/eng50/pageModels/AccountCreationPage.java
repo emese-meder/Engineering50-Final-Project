@@ -36,7 +36,7 @@ public class AccountCreationPage extends AbstractPage {
         super(webDriver);
     }
 
-    public MyAccountPage enterSignUpForm() {
+    public AddressSelectorPage enterSignUpForm() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -90,6 +90,6 @@ public class AccountCreationPage extends AbstractPage {
         webDriver.findElement(mobilePhoneField).sendKeys("00000000000");
         //webDriver.findElement(aliasField).sendKeys("Home Address");
         webDriver.findElement(registerButton).click();
-        return new MyAccountPage(webDriver);
+        return new AddressSelectorPage(webDriver);
     }
 }

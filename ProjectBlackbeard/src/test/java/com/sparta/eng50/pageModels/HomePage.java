@@ -9,12 +9,15 @@ import org.openqa.selenium.interactions.Actions;
 
 public class HomePage extends AbstractPage {
 
+
+    By notificationBox = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2");
     By addToCartButton = By.xpath("//*[@id=\"homefeatured\"]/li[6]/div/div[2]/div[2]/a[1]");
     By proceedToCheckoutButton = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a");
     WebDriverWait wait = new WebDriverWait(webDriver, 120);
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By tshirtButtonInDropdown = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[1]/a");
+
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
@@ -44,6 +47,26 @@ public class HomePage extends AbstractPage {
         return new SignInPage(webDriver);
     }
 
+
+    public CartPage addItemToCart() {
+        webDriver.findElement(addToCartButton).click();
+        return new CartPage(webDriver);
+    }
+
+    public String getCartNotification(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return webDriver.findElement(notificationBox).getText();
+    }
+
+    public CartPage clickProceedToCheckout() {
+        webDriver.findElement(proceedToCheckoutButton).click();
+        return new CartPage(webDriver);
+    }
+
     public ItemPage navigateToFirstItem() throws InterruptedException {
         webDriver.findElement(firstItem).click();
         return (new ItemPage(webDriver));
@@ -62,6 +85,7 @@ public class HomePage extends AbstractPage {
         Thread.sleep(2000);
         webDriver.findElement(tshirtButtonInDropdown).click();
         return (new TShirtsPage(webDriver));
+
     }
 
 }
