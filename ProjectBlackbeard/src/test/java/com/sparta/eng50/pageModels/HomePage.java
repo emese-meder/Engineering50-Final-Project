@@ -58,6 +58,7 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
+
     public TShirtsPage navigateToTShirtsPage() throws InterruptedException {
         Thread.sleep(2000);
         webDriver.findElement(tshirtButtonInDropdown).click();
