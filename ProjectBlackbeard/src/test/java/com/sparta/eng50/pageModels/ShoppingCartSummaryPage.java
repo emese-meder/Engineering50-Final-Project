@@ -17,7 +17,7 @@ public class ShoppingCartSummaryPage extends AbstractPage {
         webDriver.findElement(proceedToCheckoutButton).click();
     }
 
-    public ShoppingCartSummaryPage increaseQuantity() {
+    public ShoppingCartSummaryPage increaseQuantity() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(increaseQuantityButton));
         webDriver.findElement(increaseQuantityButton).click();
         return this;

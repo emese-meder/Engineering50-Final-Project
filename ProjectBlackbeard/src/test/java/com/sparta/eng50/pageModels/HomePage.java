@@ -24,9 +24,10 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
-    public void addItemToCart() {
+    public HomePage addItemToCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(addToCartButton));
         webDriver.findElement(addToCartButton).click();
+        return new HomePage(webDriver);
     }
 
     public ShoppingCartSummaryPage proceedToCheckout() {
