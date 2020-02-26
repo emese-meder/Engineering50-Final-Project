@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ProjectBlackbeard" />
-        <module name="Engineering50-Final-Project" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ProjectBlackbeard" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>
