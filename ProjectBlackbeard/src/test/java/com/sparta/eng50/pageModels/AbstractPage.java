@@ -8,7 +8,7 @@ public abstract class AbstractPage {
     protected WebDriver webDriver;
 
     By queryBox = By.name("search_query");
-    By navWomenButton = By.linkText("Women");
+    By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By navDressesButton = By.linkText("Dresses");
     By navTShirtsButton = By.linkText("T-shirts");
     By contactUsButton = By.xpath("//*[@id=\"contact-link\"]/a");
@@ -40,7 +40,7 @@ public abstract class AbstractPage {
         return (new DressesPage(webDriver));
     }
 
-    public TShirtsPage navigateToTShirtsPage() {
+    public TShirtsPage navigateToTShirtsPage() throws InterruptedException {
         webDriver.findElement(navTShirtsButton).click();
         return (new TShirtsPage(webDriver));
     }
