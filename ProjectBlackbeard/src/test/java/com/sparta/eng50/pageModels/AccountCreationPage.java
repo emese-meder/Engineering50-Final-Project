@@ -2,6 +2,7 @@ package com.sparta.eng50.pageModels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 public class AccountCreationPage extends AbstractPage {
@@ -37,11 +38,12 @@ public class AccountCreationPage extends AbstractPage {
     }
 
     public AddressSelectorPage enterSignUpForm() {
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(mrCheckButton));
         webDriver.findElement(mrCheckButton).click();
         webDriver.findElement(firstNameField).sendKeys("Test");
         webDriver.findElement(lastNameField).sendKeys("User");
