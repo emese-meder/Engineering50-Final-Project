@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends AbstractPage {
 
@@ -55,7 +56,7 @@ public class HomePage extends AbstractPage {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
 
         webDriver.findElement(proceedToCheckoutButton).click();
-        return (new ShoppingCartSummaryPage(webDriver));
+        //return (new ShoppingCartSummaryPage(webDriver));
     }
 
     public SignInPage navigateToSignInPage() {

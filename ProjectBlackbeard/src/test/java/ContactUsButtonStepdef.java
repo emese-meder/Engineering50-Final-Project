@@ -11,10 +11,10 @@ public class ContactUsButtonStepdef {
     WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
     HomePage homePage = new HomePage(webDriver);
 
-    @Given("I am on the homepage.")
-    public void iAmOnTheHomepage() {
-        homePage.navigateToHomePage();
-    }
+//    @Given("I am on the homepage.")
+//    public void iAmOnTheHomepage() {
+//        homePage.navigateToHomePage();
+//    }
 
     @When("I click on the contact us link.")
     public void iClickOnTheContactUsLink() {

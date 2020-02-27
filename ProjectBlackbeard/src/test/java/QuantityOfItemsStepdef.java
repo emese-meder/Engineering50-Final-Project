@@ -28,7 +28,7 @@ public class QuantityOfItemsStepdef {
 
     @And("I am on the shopping cart summary")
     public void iAmOnTheShoppingCartSummary() {
-        shoppingCartSummaryPage = homePage.proceedToCheckout();
+        homePage.proceedToCheckout();
     }
 
     @When("I click on the add quantity button")

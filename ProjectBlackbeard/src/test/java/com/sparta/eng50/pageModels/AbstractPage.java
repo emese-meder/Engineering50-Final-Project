@@ -53,11 +53,12 @@ public abstract class AbstractPage {
         Actions actions = new Actions(webDriver);
         WebElement target = webDriver.findElement(cartButton);
         actions.moveToElement(target).perform();
-        return this;
+
 
         this.wait = new WebDriverWait(webDriver,20);
 
         this.webDriverWait = new WebDriverWait(webDriver, 20);
+        return this;
     }
 
     public CartPage navigateToCart() {
@@ -68,6 +69,7 @@ public abstract class AbstractPage {
     public SpecialPage navigateToSpecial() {
         webDriver.findElement(specialPageButton).click();
         return (new SpecialPage(webDriver));
+    }
 
     public OurStoresPage navigateToOurStoresPage() {
         webDriver.findElement(ourStoresPageFooterButton).click();
