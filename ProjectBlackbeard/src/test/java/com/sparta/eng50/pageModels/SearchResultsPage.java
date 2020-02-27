@@ -9,6 +9,7 @@ public class SearchResultsPage extends AbstractPage {
     public SearchResultsPage(WebDriver webDriver) {
         super(webDriver);
     }
+
     public SearchResultsPage navigateToSearchResultsPageWithoutSearch() {
         webDriver.get("http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query=dress&submit_search=");
         return this;
@@ -40,5 +41,16 @@ public class SearchResultsPage extends AbstractPage {
          webDriver.findElement(By.id("informations_block_left_1")).findElement(By.linkText("Our stores")).click();
          return new OurStoresPage(webDriver);
      }
+
+
+    public SearchResultsPage searchForDress(){
+        webDriver.get("http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query=dress&submit_search=");
+        return this;
+    }
+    public SearchResultsPage searchForTshirt(){
+        webDriver.get("http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query=t-shirt&submit_search=");
+        return this;
+
+    }
 
 }

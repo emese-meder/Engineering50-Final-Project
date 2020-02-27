@@ -13,11 +13,15 @@ import javax.swing.text.TabExpander;
 public abstract class AbstractPage {
     protected WebDriver webDriver;
 
+
     protected WebDriverWait wait;
 
     protected WebDriverWait webDriverWait;
 
-    By queryBox = By.name("search_query");
+
+   // By queryBox = By.name("search_query");
+    By queryBox = By.xpath("//*[@id=\"search_query_top\"]");
+
     By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By navDressesButton = By.linkText("Dresses");
     By navTShirtsButton = By.linkText("T-shirts");
