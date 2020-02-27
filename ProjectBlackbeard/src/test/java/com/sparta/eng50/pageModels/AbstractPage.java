@@ -22,21 +22,20 @@ public abstract class AbstractPage {
    // By queryBox = By.name("search_query");
     By queryBox = By.xpath("//*[@id=\"search_query_top\"]");
 
-    By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
-    By navDressesButton = By.linkText("Dresses");
-    By navTShirtsButton = By.linkText("T-shirts");
-    By contactUsButton = By.xpath("//*[@id=\"contact-link\"]/a");
-    By signInButton = By.linkText("Sign in");
-    By signOutButton = By.className("logout");
-    By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
-    By specialPageButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[1]/a");
-    By homePageLogoButton = By.xpath("//*[@id=\"header_logo\"]/a/img");
-    By cartDropDownMenu = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a");
-    By contactUsFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[5]/a");
-    By addressFooterButton = By.xpath("//*[@id=\"footer\"]/div/section[5]/div/ul/li[3]/a");
+    private By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
+    private By navDressesButton = By.linkText("Dresses");
+    private By navTShirtsButton = By.linkText("T-shirts");
+    private By contactUsButton = By.xpath("//*[@id=\"contact-link\"]/a");
+    private By signInButton = By.linkText("Sign in");
+    private By signOutButton = By.className("logout");
+    private By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
+    private By specialPageButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[1]/a");
+    private By homePageLogoButton = By.xpath("//*[@id=\"header_logo\"]/a/img");
+    private By contactUsFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[5]/a");
+    private By addressFooterButton = By.xpath("//*[@id=\"footer\"]/div/section[5]/div/ul/li[3]/a");
     private By termsAndConditonsButton = By.linkText("Terms and conditions of use");
-    By newProductPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[2]/a");
-    By ourStoresPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[4]/a");
+    private By newProductPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[2]/a");
+    private By ourStoresPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[4]/a");
 
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
