@@ -31,6 +31,7 @@ public class ShoppingCartSummaryPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(decreaseQuantityButton));
         webDriver.findElement(decreaseQuantityButton).click();
         return this;
+    }
 
     public void deleteProduct() {
         webDriver.findElement(deleteProductButton).click();
