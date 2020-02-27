@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
     protected WebDriver webDriver;
+    protected WebDriverWait wait;
 
     protected WebDriverWait wait;
     By queryBox = By.name("search_query");
@@ -25,6 +26,7 @@ public abstract class AbstractPage {
 
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
+
         this.wait = new WebDriverWait(webDriver, 20);
     }
 
@@ -38,6 +40,9 @@ public abstract class AbstractPage {
         WebElement target = webDriver.findElement(cartButton);
         actions.moveToElement(target).perform();
         return this;
+
+        this.wait = new WebDriverWait(webDriver,20);
+
     }
 
     public CartPage navigateToCart() {

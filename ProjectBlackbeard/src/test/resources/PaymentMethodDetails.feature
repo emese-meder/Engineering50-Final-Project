@@ -1,5 +1,4 @@
 Feature: Getting details of payment method
-
   Scenario Outline: Pick Payment Method
     Given I am on the Payment Page
     When I click on Payment <paymentType>

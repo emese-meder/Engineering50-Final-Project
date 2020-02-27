@@ -16,6 +16,7 @@ public class HomePage extends AbstractPage {
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By tshirtButtonInDropdown = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[1]/a");
+    By specialsButton =By.id("footer");
 
 
     public HomePage(WebDriver webDriver) {
@@ -46,10 +47,12 @@ public class HomePage extends AbstractPage {
     }
 
 
-//    public CartPage addItemToCart() {
-//        webDriver.findElement(addToCartButton).click();
-//        return new CartPage(webDriver);
-//    }
+/*
+    public CartPage addItemToCart() {
+        webDriver.findElement(addToCartButton).click();
+        return new CartPage(webDriver);
+    }*/
+
 
     public String getCartNotification(){
         try {
@@ -65,7 +68,7 @@ public class HomePage extends AbstractPage {
         return new CartPage(webDriver);
     }
 
-    public ItemPage navigateToFirstItem() throws InterruptedException {
+    public ItemPage navigateToFirstItem(){
         webDriver.findElement(firstItem).click();
         return (new ItemPage(webDriver));
     }
@@ -83,7 +86,5 @@ public class HomePage extends AbstractPage {
         Thread.sleep(2000);
         webDriver.findElement(tshirtButtonInDropdown).click();
         return (new TShirtsPage(webDriver));
-
     }
-
 }
