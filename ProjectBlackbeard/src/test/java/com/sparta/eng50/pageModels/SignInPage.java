@@ -3,9 +3,11 @@ package com.sparta.eng50.pageModels;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class SignInPage extends AbstractPage {
   //sort this out
@@ -65,7 +67,6 @@ public class SignInPage extends AbstractPage {
 
     public SignInPage enterSignInFields() throws InterruptedException {
         Thread.sleep(1000);
-
 
         webDriver.findElement(Username).sendKeys("fedf@fd.com");
         webDriver.findElement(Password).sendKeys("Password1");
