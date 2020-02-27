@@ -11,8 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInPage extends AbstractPage {
   //sort this out
-    By emailAddressInputBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/div[2]/form/div/div[1]/input");
-    By passwordInputBox = By.id("passwd");
+    //email
+    By emailAddressInputBox = By.id("email");
+     By passwordInputBox = By.id("passwd");
     By signInButton = By.id("SubmitLogin");
 
     By emailText = By.name("email_create");
@@ -36,13 +37,28 @@ public class SignInPage extends AbstractPage {
         webDriver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         return this;
     }
-
-    public MyAccountPage login() {
+//remove this login method because the same method has been done below but split up, if i remove will cause errors, so someone else remove
+   public MyAccountPage login() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
         webDriver.findElement(emailAddressInputBox).sendKeys("fedf@fd.com");
         webDriver.findElement(passwordInputBox).sendKeys("Password1");
         webDriver.findElement(signInButton).click();
         return (new MyAccountPage(webDriver));
+    }
+
+    public void enterEmailAddress() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(emailAddressInputBox).sendKeys("fedf@fd.com");
+    }
+
+    public void enterPassword() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(passwordInputBox).sendKeys("Password1");
+    }
+
+    public void clickSignInButtonOnSignInPage() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(signInButton).click();
     }
 
   public AccountCreationPage enterEmailAddress(String email) {
