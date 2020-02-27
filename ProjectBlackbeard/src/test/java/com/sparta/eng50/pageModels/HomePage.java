@@ -11,7 +11,7 @@ public class HomePage extends AbstractPage {
 
     By notificationBox = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2");
     By addToCartButton = By.xpath("//*[@id=\"homefeatured\"]/li[6]/div/div[2]/div[2]/a[1]");
-    By proceedToCheckoutButton = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a");
+    By proceedToCheckoutButton = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a");
 
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
@@ -38,14 +38,9 @@ public class HomePage extends AbstractPage {
     }
 
 	//note: choose one!
-    public HomePage addItemToCart() {
+    public void addItemToCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(addToCartButton));
-
-    /*public void addItemToCart() {
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(addToCartButton));
-	*/
         webDriver.findElement(addToCartButton).click();
-        return new HomePage(webDriver);
     }
 
 	/*
@@ -53,10 +48,8 @@ public class HomePage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
 	*/
     public void proceedToCheckout() {
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
         webDriver.findElement(proceedToCheckoutButton).click();
-        //return (new ShoppingCartSummaryPage(webDriver));
     }
 
     public SignInPage navigateToSignInPage() {

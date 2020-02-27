@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AddressPage extends AbstractPage {
-    By updateDeliveryAddressButton = By.xpath("//*[@id=\"address_delivery\"]/li[7]/a");
-    By deliveryAddress1Text = By.xpath("//*[@id=\"address_delivery\"]/li[3]");
+    private By updateDeliveryAddressButton = By.xpath("//*[@id=\"address_delivery\"]/li[7]/a");
+    private By deliveryAddress1Text = By.xpath("//*[@id=\"address_delivery\"]/li[3]");
 
     public AddressPage(WebDriver webDriver) {
         super(webDriver);

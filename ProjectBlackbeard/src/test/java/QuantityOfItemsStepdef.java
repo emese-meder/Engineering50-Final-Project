@@ -8,26 +8,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class QuantityOfItemsStepdef {
-    FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
-    WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
+    private FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
+    private WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
 
-    HomePage homePage = new HomePage(webDriver);
-    SignInPage signInPage = new SignInPage(webDriver);
-    MyAccountPage myAccountPage;
-    ShoppingCartSummaryPage shoppingCartSummaryPage;
-    By amount = By.xpath("/html/body/div/div[2]/div/div[3]/div/h1/span/span");
-    By emptyBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/p");
+    private HomePage homePage = new HomePage(webDriver);
+    private SignInPage signInPage = new SignInPage(webDriver);
+    private MyAccountPage myAccountPage = new MyAccountPage(webDriver);
+    private ShoppingCartSummaryPage shoppingCartSummaryPage = new ShoppingCartSummaryPage(webDriver);
+    private By amount = By.id("summary_products_quantity");
+    private By emptyBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/p");
 
-    @Given("there is a product in the cart")
-    public void thereIsAProductInTheCart() {
+
+    @Given("I am on the homepage \\(QuantityOfItemsStepDef)")
+    public void iAmOnTheHomepageQuantityOfItemsStepDef() {
         homePage.navigateToHomePage();
-        homePage = homePage.navigateToHeaderSignInPage().login().navigateToHomePageThroughLogo();
-        homePage.addItemToCart();
-
     }
 
-    @And("I am on the shopping cart summary")
-    public void iAmOnTheShoppingCartSummary() {
+    @And("there is a product in the cart\\(QuantityOfItemsStepDef)")
+    public void thereIsAProductInTheCart() {
+        homePage.navigateToHeaderSignInPage();
+        signInPage.login();
+        signInPage.navigateToHomePageThroughLogo();
+        homePage.addItemToCart();
+    }
+
+    @And("I am on the shopping cart summary\\(QuantityOfItemsStepDef)")
+    public void iAmOnTheShoppingCartSummaryQuantityOfItemsStepDef() {
         homePage.proceedToCheckout();
     }
 
@@ -54,4 +60,7 @@ public class QuantityOfItemsStepdef {
         Assertions.assertEquals("Your shopping cart is empty.", webDriver.findElement(emptyBox).getText());
         webDriver.quit();
     }
+
+
+
 }

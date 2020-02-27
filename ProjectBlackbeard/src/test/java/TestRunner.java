@@ -3,6 +3,5 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/quickestpath.feature")
 public class TestRunner {
 }
