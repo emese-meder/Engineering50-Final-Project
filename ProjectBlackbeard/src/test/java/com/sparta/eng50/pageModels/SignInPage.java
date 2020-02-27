@@ -65,13 +65,13 @@ public class SignInPage extends AbstractPage {
         return webDriver.findElement(authenticationBreadcrumb).getText();
     }
 
-    public SignInPage enterSignInFields() throws InterruptedException {
+    public MyAccountPage enterSignInFields() throws InterruptedException {
         Thread.sleep(1000);
 
         webDriver.findElement(Username).sendKeys("fedf@fd.com");
         webDriver.findElement(Password).sendKeys("Password1");
         webDriver.findElement(SignInEnterButton).click();
-        return (new SignInPage(webDriver));
+        return (new MyAccountPage(webDriver));
 
     }
 }
