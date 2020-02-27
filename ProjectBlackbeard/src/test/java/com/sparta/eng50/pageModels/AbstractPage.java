@@ -3,10 +3,14 @@ package com.sparta.eng50.pageModels;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
     protected WebDriver webDriver;
 
+    protected WebDriverWait wait;
     By queryBox = By.name("search_query");
     By navWomenButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
     By navDressesButton = By.linkText("Dresses");
@@ -16,9 +20,24 @@ public abstract class AbstractPage {
     By signOutButton = By.className("logout");
     By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
     By specialPageButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[1]/a");
+    By homePageLogoButton = By.xpath("//*[@id=\"header_logo\"]/a/img");
+    By cartDropDownMenu = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a");
 
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
+        this.wait = new WebDriverWait(webDriver, 20);
+    }
+
+    public HomePage navigateToHomePageThroughLogo() {
+        webDriver.findElement(homePageLogoButton).click();
+        return (new HomePage(webDriver));
+    }
+
+    public AbstractPage hoverOverCartDropDown() {
+        Actions actions = new Actions(webDriver);
+        WebElement target = webDriver.findElement(cartButton);
+        actions.moveToElement(target).perform();
+        return this;
     }
 
     public CartPage navigateToCart() {
