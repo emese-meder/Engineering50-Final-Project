@@ -74,15 +74,17 @@ public class HomePage extends AbstractPage {
 
 
     public String getCartNotification(){
-        try {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(notificationBox));
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         return webDriver.findElement(notificationBox).getText();
     }
 
     public CartPage clickProceedToCheckout() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
         webDriver.findElement(proceedToCheckoutButton).click();
         return new CartPage(webDriver);
     }

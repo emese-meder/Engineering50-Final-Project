@@ -46,22 +46,24 @@ public class SignInPage extends AbstractPage {
     }
 
   public AccountCreationPage enterEmailAddress(String email) {
-        try {
+        /*try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailText));
         webDriver.findElement(emailText).sendKeys(email);
         webDriver.findElement(createAccountButton).click();
         return new AccountCreationPage(webDriver);
     }
 
     public String getBreadcrumbText(){
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(authenticationBreadcrumb));
         return webDriver.findElement(authenticationBreadcrumb).getText();
     }
 

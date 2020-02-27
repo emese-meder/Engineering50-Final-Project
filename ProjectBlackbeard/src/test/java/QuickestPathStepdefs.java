@@ -3,10 +3,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_pirate.Aye;
-import io.cucumber.java.en_pirate.Blimey;
-import io.cucumber.java.en_pirate.Gangway;
-import io.cucumber.java.en_pirate.Letgoandhaul;
 import org.openqa.selenium.WebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,14 +12,14 @@ public class QuickestPathStepdefs {
     WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
 
     HomePage homePage = new HomePage(webDriver);
-    CartPage cartPage;
-    SignInPage signInPage;
-    AccountCreationPage accountCreationPage;
-    AddressSelectorPage addressSelectorPage;
-    ShippingPage shippingPage;
-    PaymentPage paymentPage;
-    PaymentConfirmationPage paymentConfirmationPage;
-    OrderConfirmationPage orderConfirmationPage;
+    CartPage cartPage = new CartPage(webDriver);
+    SignInPage signInPage = new SignInPage(webDriver);
+    AccountCreationPage accountCreationPage = new AccountCreationPage(webDriver);
+    AddressSelectorPage addressSelectorPage = new AddressSelectorPage(webDriver);
+    ShippingPage shippingPage = new ShippingPage(webDriver);
+    PaymentPage paymentPage = new PaymentPage(webDriver);
+    PaymentConfirmationPage paymentConfirmationPage = new PaymentConfirmationPage(webDriver);
+    OrderConfirmationPage orderConfirmationPage = new OrderConfirmationPage(webDriver);
 
     @Given("I am on the home page")
     public void iAmOnTheHomePage() {
@@ -43,12 +39,12 @@ public class QuickestPathStepdefs {
 
     @When("I click proceed to checkout")
     public void iClickProceedToCheckout() {
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        cartPage = homePage.clickProceedToCheckout();
+        }*/
+        homePage.clickProceedToCheckout();
     }
 
     @Then("I should go to the checkout with the item in the cart")
@@ -59,7 +55,7 @@ public class QuickestPathStepdefs {
 
     @When("I click on the proceed to checkout button")
     public void iClickOnTheProceedToCheckoutButton() {
-        signInPage = cartPage.clickProceedToCheckout();
+        cartPage.clickProceedToCheckout();
     }
 
     @Then("I am transported to the checkout sign in page")
@@ -70,22 +66,22 @@ public class QuickestPathStepdefs {
 
     @When("I enter an email address and click create an account")
     public void iEnterAnEmailAddressAndClickCreateAnAccount() {
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        accountCreationPage = signInPage.enterEmailAddress(EmailRandomiser.getRandomEmailAddress());
+        }*/
+        signInPage.enterEmailAddress(EmailRandomiser.getRandomEmailAddress());
     }
 
     @When("I enter in valid details for account creation")
     public void iEnterInValidDetailsForAccountCreation() {
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        addressSelectorPage = accountCreationPage.enterSignUpForm();
+        }*/
+        accountCreationPage.enterSignUpForm();
     }
 
     @Then("I should have an account made")
@@ -96,7 +92,7 @@ public class QuickestPathStepdefs {
 
     @When("I click on the proceed to checkout button on the address page")
     public void iClickOnTheProceedToCheckoutButtonOnTheAddressPage() {
-        shippingPage = addressSelectorPage.clickProceedToCheckout();
+        addressSelectorPage.clickProceedToCheckout();
     }
 
     @Then("I should be on the shipping page")
@@ -108,17 +104,17 @@ public class QuickestPathStepdefs {
 
     @When("I agree to the terms and conditions")
     public void iAgreeToTheTermsAndConditions() {
-        try {
+        /*try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         shippingPage.clickOnTermsAndConditions();
     }
 
     @And("I then click the proceed to checkout button on the shipping page")
     public void iThenClickTheProceedToCheckoutButtonOnTheShippingPage() {
-        paymentPage = shippingPage.proceedButton();
+        shippingPage.proceedButton();
     }
 
     @Then("I should be on the payment page")
@@ -129,7 +125,7 @@ public class QuickestPathStepdefs {
 
     @When("I choose to pay by bank wire")
     public void iChooseToPayByBankWire() {
-        paymentConfirmationPage = paymentPage.clickPayByBankWire();
+        paymentPage.clickPayByBankWire();
     }
 
     @Then("I should be on the payment confirmation page")
@@ -140,7 +136,7 @@ public class QuickestPathStepdefs {
 
     @When("I click I confirm my order")
     public void iClickIConfirmMyOrder() {
-        orderConfirmationPage = paymentConfirmationPage.clickOnConfirmButton();
+        paymentConfirmationPage.clickOnConfirmButton();
     }
 
     @Then("I will be able to view the order details page")

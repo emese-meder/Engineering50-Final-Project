@@ -2,6 +2,7 @@ package com.sparta.eng50.pageModels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends AbstractPage {
 
@@ -18,11 +19,12 @@ public class CartPage extends AbstractPage {
 
 
     public String getProductText(){
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productText));
         return webDriver.findElement(productText).getText();
     }
   
