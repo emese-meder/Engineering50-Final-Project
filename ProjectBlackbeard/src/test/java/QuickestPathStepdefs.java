@@ -39,11 +39,6 @@ public class QuickestPathStepdefs {
 
     @When("I click proceed to checkout")
     public void iClickProceedToCheckout() {
-        /*try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         homePage.clickProceedToCheckout();
     }
 
@@ -66,21 +61,11 @@ public class QuickestPathStepdefs {
 
     @When("I enter an email address and click create an account")
     public void iEnterAnEmailAddressAndClickCreateAnAccount() {
-        /*try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         signInPage.enterEmailAddress(EmailRandomiser.getRandomEmailAddress());
     }
 
     @When("I enter in valid details for account creation")
     public void iEnterInValidDetailsForAccountCreation() {
-        /*try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         accountCreationPage.enterSignUpForm();
     }
 
@@ -104,11 +89,6 @@ public class QuickestPathStepdefs {
 
     @When("I agree to the terms and conditions")
     public void iAgreeToTheTermsAndConditions() {
-        /*try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         shippingPage.clickOnTermsAndConditions();
     }
 

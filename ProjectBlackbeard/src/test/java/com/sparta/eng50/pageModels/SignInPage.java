@@ -18,7 +18,7 @@ public class SignInPage extends AbstractPage {
     By emailText = By.name("email_create");
     By createAccountButton = By.xpath("//*[@id=\"SubmitCreate\"]");
 
-    By authenticationBreadcrumb = By.xpath("//*[@id=\"columns\"]/div[1]/span[2]");
+    By authenticationBreadcrumb = By.className("navigation_page");
 
     By Username = By.xpath("//*[@id=\"email\"]");
     By Password = By.xpath("//*[@id=\"passwd\"]");
@@ -46,11 +46,6 @@ public class SignInPage extends AbstractPage {
     }
 
   public AccountCreationPage enterEmailAddress(String email) {
-        /*try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailText));
         webDriver.findElement(emailText).sendKeys(email);
         webDriver.findElement(createAccountButton).click();
@@ -58,11 +53,6 @@ public class SignInPage extends AbstractPage {
     }
 
     public String getBreadcrumbText(){
-        /*try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         wait.until(ExpectedConditions.visibilityOfElementLocated(authenticationBreadcrumb));
         return webDriver.findElement(authenticationBreadcrumb).getText();
     }

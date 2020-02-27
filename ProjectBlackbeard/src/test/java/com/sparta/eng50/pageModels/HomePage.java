@@ -10,8 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage extends AbstractPage {
 
     By notificationBox = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2");
-    By addToCartButton = By.xpath("//*[@id=\"homefeatured\"]/li[6]/div/div[2]/div[2]/a[1]");
-    By proceedToCheckoutButton = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a");
+
+    By addToCartButton = By.linkText("Add to cart");
+    By proceedToCheckoutButton = By.linkText("Proceed to checkout");
 
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
