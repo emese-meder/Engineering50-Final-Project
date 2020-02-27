@@ -13,7 +13,6 @@ public class QuantityOfItemsStepdef {
 
     private HomePage homePage = new HomePage(webDriver);
     private SignInPage signInPage = new SignInPage(webDriver);
-    private MyAccountPage myAccountPage = new MyAccountPage(webDriver);
     private ShoppingCartSummaryPage shoppingCartSummaryPage = new ShoppingCartSummaryPage(webDriver);
     private By amount = By.id("summary_products_quantity");
     private By emptyBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/p");
