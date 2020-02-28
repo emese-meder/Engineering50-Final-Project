@@ -44,7 +44,30 @@ We were running into the issue where we sometimes didn't understand the task/tic
 Not having concise user stories so they were getting misconstrued between groups and would need further clarification
 from the author of the user story.
 
-# Sprint 3 (Wednesday: 11:22am - Thursday 12:30pm)
+# Sprint 2 (Wednesday 12:30pm - Thursday 9:00am)
+
+Overview: This sprint was designed in order to work through as many of the outstanding tickets as possible. The group were split into different groups than the previous sprint and given a small amount of tickets to complete, with extra being pulled from the backlog if completed.
+
+Review: 
+Positives - 
+
+Group work was improved, with more people moving around helping each other
+
+Less relient on Emese for help with git
+
+Better communication and awareness of what other individuals were working on
+
+Sprint was better planned than previous ones
+
+Improvements -
+
+JIRA was poorly used - very few updates, checking of it - most planning done on wall
+
+Code is messy with a lot of chained methods and feature files needing reorganisation
+
+Merging took a lot more work than expected so more time should be allocated for that
+
+# Sprint 3 (Thursday 12:30pm - Friday 9:00am)
 
 Overview: The purpose of this sprint was to focus on refactoring. We realised that not everyone was following the same conventions when creating features, stepdefs and page models. The sprint goal was to have a complete end product and get through as many slides as possible.
 
