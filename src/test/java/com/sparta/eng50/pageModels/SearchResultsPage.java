@@ -38,21 +38,21 @@ public class SearchResultsPage extends AbstractPage {
         webDriver.findElement(informationTable).findElement(By.linkText("Secure payment")).click();
         return new SecurePaymentPage(webDriver);
     }
-    public OurStoresPage navigateToOurStoresPage(){
-        webDriver.findElement(informationTable).findElement(By.linkText("Our stores")).click();
-        return new OurStoresPage(webDriver);
-    }
-}
+//    public OurStoresPage navigateToOurStoresPage(){
+//        webDriver.findElement(informationTable).findElement(By.linkText("Our stores")).click();
+//        return new OurStoresPage(webDriver);
+//    }
+
 
 //     public DeliveryInformationPage navigateToDeliveryInformation(){
 //        webDriver.findElement(By.id("informations_block_left_1")).findElement(By.linkText("Delivery")).click();
 //        return new DeliveryInformationPage(webDriver);
 //     }
 
-     public TermsAndConditionsPage navigateToTermsAndConditions(){
-        webDriver.findElement(By.id("informations_block_left_1")).findElement(By.linkText("Terms and conditions of use")).click();
-        return new TermsAndConditionsPage(webDriver);
-     }
+//     public TermsAndConditionsPage navigateToTermsAndConditions(){
+//        webDriver.findElement(By.id("informations_block_left_1")).findElement(By.linkText("Terms and conditions of use")).click();
+//        return new TermsAndConditionsPage(webDriver);
+//     }
 
 //     public LegalNoticePage navigateToLegalNoticePage(){
 //        webDriver.findElement(By.id("informations_block_left_1")).findElement(By.linkText("Legal Notice")).click();
