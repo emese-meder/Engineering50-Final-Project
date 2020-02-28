@@ -7,13 +7,12 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class SpecialPageStepdef {
-    FactoryPatternObject factoryPatternObject = new FactoryPatternObject(); //Create the FactoryPatternObject
-    WebDriver webDriver = factoryPatternObject.getWebDriver("chrome"); //The WebDriver should equal the returned driver from the FactoryPatternObject
+    private FactoryPatternObject factoryPatternObject = new FactoryPatternObject(); //Create the FactoryPatternObject
+    private WebDriver webDriver = factoryPatternObject.getWebDriver("chrome"); //The WebDriver should equal the returned driver from the FactoryPatternObject
+    private HomePage homePage = new HomePage(webDriver); // HomePage must be instantiated at the beginning as its where you start from
 
-    HomePage homePage = new HomePage(webDriver); // HomePage must be instantiated at the beginning as its where you start from
-
-    @Given("I am on the homepage.")
-    public void iAmOnTheHomepage() {
+    @Given("I am on the homepage \\(SpecialPageStepdef).")
+    public void iAmOnTheHomepageSpecialPageStepdef() {
         homePage.navigateToHomePage();
     }
 

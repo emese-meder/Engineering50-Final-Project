@@ -7,14 +7,15 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class ContactUsButtonStepdef {
-    FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
-    WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
-    HomePage homePage = new HomePage(webDriver);
+    private FactoryPatternObject factoryPatternObject = new FactoryPatternObject();
+    private WebDriver webDriver = factoryPatternObject.getWebDriver("chrome");
+    private HomePage homePage = new HomePage(webDriver);
 
-//    @Given("I am on the homepage.")
-//    public void iAmOnTheHomepage() {
-//        homePage.navigateToHomePage();
-//    }
+
+    @Given("I am on the homepage \\(ContactUsStepDef).")
+    public void iAmOnTheHomepageContactUsStepDef() {
+        homePage.navigateToHomePage();
+    }
 
     @When("I click on the contact us link.")
     public void iClickOnTheContactUsLink() {
@@ -26,4 +27,6 @@ public class ContactUsButtonStepdef {
         Assertions.assertEquals("http://automationpractice.com/index.php?controller=contact", webDriver.getCurrentUrl());
         webDriver.quit();
     }
+
+
 }
