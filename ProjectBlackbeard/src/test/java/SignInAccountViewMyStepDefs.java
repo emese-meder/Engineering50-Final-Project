@@ -1,6 +1,7 @@
 import com.sparta.eng50.pageModels.FactoryPatternObject;
 import com.sparta.eng50.pageModels.HomePage;
 import com.sparta.eng50.pageModels.SignInPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,19 +13,41 @@ public class SignInAccountViewMyStepDefs {
     WebDriver webDriver = factoryPatternObject.getWebDriver("chrome"); //The WebDriver should equal the returned driver from the FactoryPatternObject
 
     HomePage homePage = new HomePage(webDriver); // HomePage must be instantiated at the beginning as its where you start from
-    SignInPage signInPage;
-    @Given("I am on the home page.")
-    public void iAmOnTheHomePage() {
-        homePage.navigateToHomePage();
+    SignInPage signInPage = new SignInPage(webDriver);
 
-    }
 
     @When("I click on the sign in button and enter correct details.")
     public void iClickOnTheSignInButtonAndEnterCorrectDetails() throws InterruptedException {
-        signInPage = homePage.navigateToHeaderSignInPage();
+         homePage.navigateToHeaderSignInPage();
         signInPage.enterSignInFields();
     }
 
+
+    @Given("I am on the home page\\(SignInStepDef).")
+    public void iAmOnTheHomePageSignInStepDef() {
+        homePage.navigateToHomePage();
+    }
+
+    @When("I click on the sign in button.")
+    public void iClickOnTheSignInButton() {
+        homePage.navigateToSignInPage();
+    }
+
+    @And("Enter correct email address.")
+    public void enterCorrectEmailAddress() {
+        signInPage.enterEmailAddress();
+
+    }
+
+    @And("Enter correct password.")
+    public void enterCorrectPassword() {
+        signInPage.enterPassword();
+    }
+
+    @And("Click sign in button.")
+    public void clickSignInButton() {
+        signInPage.clickSignInButtonOnSignInPage();
+    }
     @Then("I should be signed in to the website.")
     public void iShouldBeSignedInToTheWebsite() {
         Assertions.assertEquals("http://automationpractice.com/index.php?controller=my-account", webDriver.getCurrentUrl());
