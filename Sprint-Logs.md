@@ -44,3 +44,22 @@ We were running into the issue where we sometimes didn't understand the task/tic
 Not having concise user stories so they were getting misconstrued between groups and would need further clarification
 from the author of the user story.
 
+# Sprint 3 (Wednesday: 11:22am - Thursday 12:30pm)
+
+Overview: The purpose of this sprint was to focus on refactoring. We realised that not everyone was following the same conventions when creating features, stepdefs and page models. The sprint goal was to have a complete end product and get through as many slides as possible.
+
+
+Review:
+Positives- 
+
+We got through nine tickets 
+
+Had good momentum throughout the sprint
+           
+Improvements- 
+
+Sprint planning took longer than expected due to the group being distracted, sprint start was delayed.
+
+Most of the group didn't use Jira to track their tickets. Tickets had to be manually moved by others rather than the individuals handling the ticket.
+
+Our communication had regressed quite a bit, it was similar to the first day of the project. I think the group got complacement and comfortable, but the main thing is we finished the day strong
