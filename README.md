@@ -2,11 +2,10 @@
 Sparta Global Academy Final Week Project
 
 ## How to execute a test
+Set featureFileName to the feature file that is being tested
 * Run TestRunner class with annotations:
-*  @RunWith(Cucumber.class)
-*  @CucumberOptions(features = "src/test/resources/<<featureFileName>>.feature")
- 
-where featureFileName is the feature file that is being tested
+  * @RunWith(Cucumber.class)
+  * @CucumberOptions(features = "src/test/resources/<featureFileName>.feature")
 
 # Read Me
 
