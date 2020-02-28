@@ -31,10 +31,9 @@ public abstract class AbstractPage {
     By cartButton = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
     By specialPageButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[1]/a");
     By homePageLogoButton = By.xpath("//*[@id=\"header_logo\"]/a/img");
-    By cartDropDownMenu = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a");
     By contactUsFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[5]/a");
     By addressFooterButton = By.xpath("//*[@id=\"footer\"]/div/section[5]/div/ul/li[3]/a");
-    By termsAndConditonsButton = By.linkText("Terms and conditions of use");
+    By termsAndConditionsButton = By.linkText("Terms and conditions of use");
     By newProductPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[2]/a");
     By ourStoresPageFooterButton = By.xpath("//*[@id=\"block_various_links_footer\"]/ul/li[4]/a");
 
@@ -44,12 +43,11 @@ public abstract class AbstractPage {
         this.wait = new WebDriverWait(webDriver, 20);
     }
 
-    public HomePage navigateToHomePageThroughLogo() {
+    public void navigateToHomePageThroughLogo() {
         webDriver.findElement(homePageLogoButton).click();
-        return (new HomePage(webDriver));
     }
 
-    public AbstractPage hoverOverCartDropDown() {
+    public void hoverOverCartDropDown() {
         Actions actions = new Actions(webDriver);
         WebElement target = webDriver.findElement(cartButton);
         actions.moveToElement(target).perform();
@@ -58,7 +56,6 @@ public abstract class AbstractPage {
         this.wait = new WebDriverWait(webDriver,20);
 
         this.webDriverWait = new WebDriverWait(webDriver, 20);
-        return this;
     }
 
     public CartPage navigateToCart() {
@@ -81,9 +78,8 @@ public abstract class AbstractPage {
         return (new NewProductsPage(webDriver));
     }
 
-    public TermsAndConditionsPage navigateToTermsAndConditionsPage() {
-        webDriver.findElement(termsAndConditonsButton).click();
-        return (new TermsAndConditionsPage(webDriver));
+    public void navigateToTermsAndConditionsPage() {
+        webDriver.findElement(termsAndConditionsButton).click();
     }
 
     public SearchResultsPage enterQueryAndSearch(String input) {
