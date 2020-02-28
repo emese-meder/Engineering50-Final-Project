@@ -2,13 +2,14 @@ package com.sparta.eng50.pageModels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends AbstractPage {
 
 
-    By productText = By.xpath("//*[@id=\"product_1_1_0_0\"]/td[2]/p/a");
+    By productText = By.className("product-name");
   //pick one
-    By proceedToCheckoutButton = By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]");
+    By proceedToCheckoutButton = By.linkText("Proceed to checkout");
     By checkoutButton = By.xpath("//*[@id=\"center_column\"]/p[2]/a[1]");
 
 
@@ -18,11 +19,7 @@ public class CartPage extends AbstractPage {
 
 
     public String getProductText(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productText));
         return webDriver.findElement(productText).getText();
     }
   

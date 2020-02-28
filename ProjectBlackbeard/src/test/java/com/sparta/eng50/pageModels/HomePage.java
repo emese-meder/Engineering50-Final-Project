@@ -13,6 +13,11 @@ public class HomePage extends AbstractPage {
     By addToCartButton = By.xpath("//*[@id=\"homefeatured\"]/li[6]/div/div[2]/div[2]/a[1]");
     By proceedToCheckoutButton = By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a");
 
+    /*
+    By addToCartButton = By.linkText("Add to cart");
+    By proceedToCheckoutButton = By.linkText("Proceed to checkout");
+    */
+
     By firstItem = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[1]/img");
     By womensButton = By.xpath("//*[@id=\"block_top_menu\"]/ul/li[1]/a");
 
@@ -67,15 +72,17 @@ public class HomePage extends AbstractPage {
 
 
     public String getCartNotification(){
-        try {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(notificationBox));
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         return webDriver.findElement(notificationBox).getText();
     }
 
     public CartPage clickProceedToCheckout() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckoutButton));
         webDriver.findElement(proceedToCheckoutButton).click();
         return new CartPage(webDriver);
     }

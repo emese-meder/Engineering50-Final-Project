@@ -11,14 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInPage extends AbstractPage {
   //sort this out
-    By emailAddressInputBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/div[2]/form/div/div[1]/input");
-    By passwordInputBox = By.id("passwd");
+    //email
+    By emailAddressInputBox = By.id("email");
+     By passwordInputBox = By.id("passwd");
     By signInButton = By.id("SubmitLogin");
 
     By emailText = By.name("email_create");
     By createAccountButton = By.xpath("//*[@id=\"SubmitCreate\"]");
 
-    By authenticationBreadcrumb = By.xpath("//*[@id=\"columns\"]/div[1]/span[2]");
+    By authenticationBreadcrumb = By.className("navigation_page");
 
     By Username = By.xpath("//*[@id=\"email\"]");
     By Password = By.xpath("//*[@id=\"passwd\"]");
@@ -36,8 +37,8 @@ public class SignInPage extends AbstractPage {
         webDriver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         return this;
     }
-
-    public MyAccountPage login() {
+//remove this login method because the same method has been done below but split up, if i remove will cause errors, so someone else remove
+   public MyAccountPage login() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
         webDriver.findElement(emailAddressInputBox).sendKeys("fedf@fd.com");
         webDriver.findElement(passwordInputBox).sendKeys("Password1");
@@ -45,23 +46,30 @@ public class SignInPage extends AbstractPage {
         return (new MyAccountPage(webDriver));
     }
 
+    public void enterEmailAddress() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(emailAddressInputBox).sendKeys("fedf@fd.com");
+    }
+
+    public void enterPassword() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(passwordInputBox).sendKeys("Password1");
+    }
+
+    public void clickSignInButtonOnSignInPage() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddressInputBox));
+        webDriver.findElement(signInButton).click();
+    }
+
   public AccountCreationPage enterEmailAddress(String email) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailText));
         webDriver.findElement(emailText).sendKeys(email);
         webDriver.findElement(createAccountButton).click();
         return new AccountCreationPage(webDriver);
     }
 
     public String getBreadcrumbText(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(authenticationBreadcrumb));
         return webDriver.findElement(authenticationBreadcrumb).getText();
     }
 
